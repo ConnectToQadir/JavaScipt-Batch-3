@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Class 5 JavaScript</h1>
+
+    <script>
+      // functions
+
+      // function defination
+      //   function sum(a, b, c) {
+      //     var s = a + b + c;
+      //     return s;
+      //   }
+
+      // calling function
+      //   var r = sum(5, 1, 7);
+
+
+
+
+      
+      function calculateGrade(per) {
+        if (per > 100) {
+          return "Invalid Number";
+        } else if (per >= 86 && per <= 100) {
+          return "A";
+        } else if (per >= 66 && per <= 85) {
+          return "B";
+        } else if (per >= 51 && per <= 65) {
+          return "C";
+        } else if (per >= 33 && per <= 50) {
+          return "D";
+        } else {
+          return "F";
+        }
+      }
+
+      var data = [
+        { name: "Ali", per: 54 },
+        { name: "ahmad", per: 75 },
+        { name: "raza", per: 63 },
+        { name: "amaan", per: 99 },
+      ];
+
+      document.write(`
+            <table border>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Per%</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `);
+
+      for (var i = 0; i < data.length; i++) {
+        document.write(`
+                <tr>
+                    <td>${data[i].name}</td>
+                    <td>${data[i].per}</td>
+                    <td>${calculateGrade(data[i].per)}</td>
+                </tr>
+            `);
+      }
+
+      document.write(`
+            </tbody>
+            </table>
+        `);
+    </script>
+  </body>
+</html>
