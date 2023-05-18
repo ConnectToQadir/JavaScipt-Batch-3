@@ -21,10 +21,6 @@
       // calling function
       //   var r = sum(5, 1, 7);
 
-
-
-
-      
       function calculateGrade(per) {
         if (per > 100) {
           return "Invalid Number";
@@ -42,17 +38,23 @@
       }
 
       var data = [
-        { name: "Ali", per: 54 },
-        { name: "ahmad", per: 75 },
-        { name: "raza", per: 63 },
-        { name: "amaan", per: 99 },
+        { name: "Ali", math: 34, urdu: 54, eng: 46, sci: 54 },
+        { name: "ahmad", math: 44, urdu: 64, eng: 76, sci: 44 },
+        { name: "raza", math: 54, urdu: 94, eng: 26, sci: 54 },
+        { name: "amaan", math: 64, urdu: 34, eng: 56, sci: 74 },
       ];
+
 
       document.write(`
             <table border>
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Math</th>
+                            <th>Eng</th>
+                            <th>Urdu</th>
+                            <th>Science</th>
+                            <th>Total</th>
                             <th>Per%</th>
                             <th>Grade</th>
                         </tr>
@@ -61,11 +63,19 @@
         `);
 
       for (var i = 0; i < data.length; i++) {
+        var s = data[i]
+        var sum = s.math + s.eng + s.urdu + s.sci
+        var per = (sum/400*100).toFixed(1)
         document.write(`
                 <tr>
-                    <td>${data[i].name}</td>
-                    <td>${data[i].per}</td>
-                    <td>${calculateGrade(data[i].per)}</td>
+                    <td>${s.name}</td>
+                    <td>${s.math}</td>
+                    <td>${s.eng}</td>
+                    <td>${s.urdu}</td>
+                    <td>${s.sci}</td>
+                    <td>${sum}</td>
+                    <td>${per}</td>
+                    <td>${calculateGrade(per)}</td>
                 </tr>
             `);
       }

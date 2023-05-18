@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var ary = [1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1];
+
+      //   for (var i = 0; i < ary.length; i++) {
+      //     for (var o = i + 1; o < ary.length; o++) {
+      //       if (ary[i] === ary[o]) {
+      //         ary.splice(o, 1);
+      //         --o;
+      //       }
+      //     }
+      //   }
+
+      //   console.log(ary);
+
+      var numbers = [9,2, 3, 11,5, 6];
+
+      for (var i = 0; i < numbers.length; i++) {
+        var check = false
+        for (var o = i + 1; o < numbers.length; o++) {
+          if(numbers[i]>numbers[o]){
+            check = true
+          }else{
+            check = false
+            break
+          }
+        }
+
+        if(check){
+            
+            console.log(numbers[i])
+            break
+        }
+      }
+    </script>
+  </body>
+</html>

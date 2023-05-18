@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  </head>
+  <body>
+
+
+    <h1 class="heading" id="title" >Class 10 JavaScript</h1>
+    <!-- <h1 class="heading" id="title" >Duplicated Class 10 JavaScript</h1> -->
+
+
+    <input id="password" type="password">
+    <button id="viewBtn" onclick="viewPassword()" >View</button>
+
+
+    <ul>
+        <li>
+            <div class="dropDownElement" onclick="showDropDown()" >Branches <i class='bx bx-chevron-down'></i> </div>   
+            <ul id="dropMenu" class="dropDown" >
+                <li>Faisalabad</li>
+                <li>Lahore</li>
+                <li>Multan</li>
+                <li>Karachi</li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>kjjaksdjfalk</p>
+
+
+    <style>
+
+        ul{
+            list-style: none;
+        }
+
+        .dropDownElement{
+            border: 1px solid red;
+            display: inline-block;
+        }
+
+        .dropDown{
+            border: 1px solid blue;
+            width: 100px;
+            padding-left: 0;
+            margin-top: 5px;
+            padding: 10px;
+            background-color: rgb(198, 198, 255);
+            position: absolute;
+            transform: translateY(40px);
+            opacity: 0;
+            transition: .5s;
+        }
+
+
+        .dropDown.active{
+            opacity:1;
+            transform: translateY(0px);
+        }
+
+    </style>
+
+
+    <script>
+
+
+      // DOM ( Document Object Modal )
+      // DOM menuplation
+
+      // Selecting dom elements
+      // querySelector
+
+        // console.log(document.querySelector('#title'))
+        
+        
+        
+        // querySelectorAll
+        // console.log(document.querySelectorAll('.heading')[1])
+        
+        
+        // getElementsByTagName
+        // console.log(document.getElementsByTagName('h1'))
+        
+        
+        
+        // getElementsByClassName
+        // console.log(document.getElementsByClassName('heading'))
+        
+        
+        // getElementByID
+        // console.log(document.getElementById('title'))
+
+
+
+
+
+
+        // Menuplation
+        // document.getElementById('title').innerText = 'Hello World'
+        // document.getElementById('title').innerHTML = 'Hello <br> World'
+        // var previous = document.getElementById('title').innerText
+        // document.getElementById('title').innerHTML = previous + " Hello World"
+
+
+        // Attribute Menuplation
+
+        // function viewPassword(){
+        //     var input = document.getElementById('password')
+        //     var btn = document.getElementById('viewBtn')
+
+
+        //     if(input.type === "password"){
+        //         input.type = "text"
+        //         btn.innerText = "Hide"
+        //     }else{
+        //         input.type = "password"
+        //         btn.innerText = "View"
+        //     }
+            
+        // }
+
+
+
+        // Class Menuplation
+        
+        function showDropDown(){
+            var munu = document.getElementById('dropMenu')
+
+            var classes = Object.keys(munu.classList).map((v,i)=>{
+                return munu.classList[i]
+            })
+
+
+            // console.log(munu.classList,Object.keys(munu.classList))
+            
+            if(classes.includes('active')){
+                munu.classList.remove('active')
+            }else{
+                munu.classList.add('active')
+            }
+        }
+
+
+        
+
+
+
+
+
+        var data = {'0':"Amaan",age:34}
+        var ary = ["ali","raza"]
+
+
+        console.log(Object.keys(ary))
+
+        // console.log(ary['1'])
+
+
+        // console.log(data.age)
+        // console.log(data['age'])
+
+        
+
+
+        
+
+
+      
+    </script>
+  </body>
+</html>
