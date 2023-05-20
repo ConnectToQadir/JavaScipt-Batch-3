@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Class 11 JavaScript</h1>
+
+    <script>
+
+        // Asynchronous vs Synchronous
+        // API => Application Programming Interface
+        // fetch method is used to call API
+
+        
+        
+        // try{
+            
+        //     var a = abc
+            
+        // }catch(error){
+        //     console.log(error.message )
+        // }finally{
+        //     console.log("Finally! Done")
+        // }
+
+
+        // console.log("hello world")
+
+
+        async function fetchData(){
+
+            try {
+                console.log("Loading...")
+                var data = await  fetch('https://edifygroup.herokuapp.com/api/blogs?limit=12')
+                var jsonData = await data.json()
+                console.log(jsonData.data)
+
+                jsonData.data.map((v,i)=>{
+                    document.write(`<img src='${v.photo}' width="200" > <h1>${v.title}</h1><hr>`)
+                })
+
+            } catch (error) {
+                console.log(error.message)
+            }finally{
+                console.log("Loading Completed!")
+            }
+            
+        }
+
+
+
+        fetchData()
+
+
+
+
+        
+        
+
+
+
+        
+
+    </script>
+
+</body>
+</html>
